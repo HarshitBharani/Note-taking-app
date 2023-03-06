@@ -1,0 +1,53 @@
+.inputContainer {
+  width: 350px;
+  height: 150px;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.input {
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  width: 90%;
+}
+
+.circle {
+  display: inline-block;
+  margin: 10px 10px 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+.circle:hover {
+  opacity: 0.8;
+}
+.red {
+  background-color: #ef4444;
+}
+.green {
+  background-color: #22c55e;
+}
+.blue {
+  background-color: #3b82f6;
+}
+.outline {
+  outline: solid #cbd5e1;
+}
+.tagContainer {
+  margin: 20px 5px;
+}
+
+.tags {
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  color: white;
+}
