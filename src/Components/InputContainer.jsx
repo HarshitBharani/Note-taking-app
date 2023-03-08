@@ -6,10 +6,10 @@ export const InputContainer = () => {
   const [background, setBackground] = useState("green");
   const [tag, setTag] = useState("");
   return (
-    <div class={`${styles.inputContainer} ${styles[background]}`}>
+    <div className={`${styles.inputContainer} ${styles[background]}`}>
       <input
         id="input-box"
-        class={`${styles.input} `}
+        className={`${styles.input} `}
         type="textarea"
         onChange={(e) => setNote(e.target.value)}
         value={note}

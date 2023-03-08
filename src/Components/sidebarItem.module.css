@@ -1,0 +1,36 @@
+.sidebarItem {
+  position: relative;
+}
+.sidebarButton {
+  padding: 5px;
+  background-color: #d1d5db;
+  border: none;
+  width: 90%;
+  margin: 2px 2px;
+  text-align: left;
+
+  border-radius: 5px;
+}
+.sidebarItem:hover .editIcon {
+  visibility: visible;
+}
+.sidebarButton:hover {
+  background-color: #94a3b8;
+}
+.editIcon {
+  position: absolute;
+  visibility: hidden;
+  right: 20px;
+  height: 75%;
+  width: 15%;
+}
+.deleteIcon {
+  position: absolute;
+  visibility: hidden;
+  right: 0;
+  height: 75%;
+  width: 15%;
+}
+.sidebarItem:hover .deleteIcon {
+  visibility: visible;
+}
