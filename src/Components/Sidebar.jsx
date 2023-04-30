@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useData } from "../context/DataProvider";
 import styles from "./sidebar.module.css";
 import { SidebarItem } from "./SidebarItem";

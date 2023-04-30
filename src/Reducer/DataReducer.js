@@ -1,7 +1,7 @@
 export const intialState = [
   {
     name: "first",
-    data: [{ input: "sfddf", background: "red", tag: "work" }],
+    data: [{ note: "sfddf", background: "red", tag: "work" }],
   },
 ];
 export const dataReducer = (state, { type, payload }) => {
@@ -14,6 +14,14 @@ export const dataReducer = (state, { type, payload }) => {
       );
     case "DELETE_SIDEBAR_ITEM":
       return state.filter((_, id) => id !== payload.id);
+    case "ADD_NOTE":
+      return state.map((item, id) => {
+        if (id == payload.id) {
+          return { ...item, data: [...item.data, payload.data] };
+        }
+        return item;
+      });
+
     default:
       return state;
   }

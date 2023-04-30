@@ -1,6 +1,7 @@
 .sidebarContainer {
   width: 150px;
   position: fixed;
+  top: 0;
   padding: 5px;
   height: 100vh;
   background-color: #d1d5db;

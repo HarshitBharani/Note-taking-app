@@ -8,7 +8,8 @@
   width: 90%;
   margin: 2px 2px;
   text-align: left;
-
+  font-size: 20px;
+  
   border-radius: 5px;
 }
 .sidebarItem:hover .editIcon {

@@ -3,7 +3,9 @@ import styles from "./sidebarItem.module.css";
 import editImage from "../images/editIcon.png";
 import deleteImage from "../images/deleteIcon.png";
 import { useEffect, useRef, useState } from "react";
+import { Navigate, useNavigate } from "react-router";
 export const SidebarItem = ({ item, id }) => {
+  const navigate = useNavigate();
   const { dispatch } = useData();
   const [readOnly, setReadOnly] = useState(true);
   const inputref = useRef([]);
@@ -24,6 +26,7 @@ export const SidebarItem = ({ item, id }) => {
       type: "DELETE_SIDEBAR_ITEM",
       payload: { id },
     });
+    navigate("/");
   };
 
   return (
@@ -31,6 +34,7 @@ export const SidebarItem = ({ item, id }) => {
       <input
         onBlur={() => setReadOnly(true)}
         onChange={changeItem}
+        onClick={() => navigate(`/pages/${id}`)}
         ref={(ref) => (inputref.current[id] = ref)}
         className={styles.sidebarButton}
         value={item.name}

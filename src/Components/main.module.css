@@ -1,3 +1,25 @@
 .mainContainer {
-  margin-left: 250px;
+  margin-left: 180px;
+  padding: 1rem;
+  gap: 2rem;
+}
+.notesContainer {
+  display: flex;
+  gap: 1rem;
+  overflow: scroll;
+}
+.tagContainer {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+.tagContainer > li > button {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500px;
+}
+.notesContainer::-webkit-scrollbar {
+  width: 0;
 }
