@@ -2,13 +2,20 @@ import { useEffect, useState } from "react";
 import { useData } from "../context/DataProvider";
 
 import styles from "./inputContainer.module.css";
+type NotesProps = {
+  pageid: number;
+  dataid: number;
+  noteValue: string;
+  backgroundValue: string;
+  tagValue: string;
+};
 export const Notes = ({
   pageid,
   dataid,
   noteValue,
   backgroundValue,
   tagValue,
-}) => {
+}: NotesProps) => {
   const [note, setNote] = useState(noteValue);
   const [background, setBackground] = useState(backgroundValue);
   const [tag, setTag] = useState(tagValue);

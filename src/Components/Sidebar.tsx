@@ -4,7 +4,7 @@ import { SidebarItem } from "./SidebarItem";
 export const Sidebar = () => {
   const { state, dispatch } = useData();
 
-  const addPage = (e) => {
+  const addPage = (e: React.MouseEvent<HTMLButtonElement>) => {
     dispatch({
       type: "ADD_PAGE",
       payload: {

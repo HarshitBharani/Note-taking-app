@@ -1,25 +1,15 @@
-type IntialStateType = {
-  name: string;
-  data: { note: string; background: string; tag: string }[];
-};
 export const intialState: IntialStateType[] = [
   {
     name: "first",
     data: [{ note: "sfddf", background: "red", tag: "work" }],
   },
 ];
-type DispatchType = {
-  type: "ADD_PAGE" | "CHANGE_SIDEBAR_ITEM" | "DELETE_SIDEBAR_ITEM" | "ADD_NOTE";
-  payload: {
-    id: number;
-    name: string;
-    data: { note: string; background: string; tag: string }[];
-  };
-};
+
 export const dataReducer = (
   state: IntialStateType[],
-  { type, payload }: DispatchType
-) => {
+  action: DispatchType
+): IntialStateType[] => {
+  const { type, payload } = action;
   switch (type) {
     case "ADD_PAGE":
       return [...state, payload];
@@ -32,7 +22,7 @@ export const dataReducer = (
     case "ADD_NOTE":
       return state.map((item, id) => {
         if (id === payload.id) {
-          return { ...item, data: [...item.data, payload.data] };
+          return { ...item, data: [payload.data] };
         }
         return item;
       });

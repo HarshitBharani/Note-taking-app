@@ -7,14 +7,17 @@ import { Notes } from "./Notes";
 export const Main = () => {
   const { state } = useData();
   const { pageid } = useParams();
-  const [notesData, setNotesData] = useState(state[pageid].data);
+  if (pageid === undefined) {
+    throw Error("mdffd");
+  }
+  const [notesData, setNotesData] = useState(state[+pageid].data);
   console.log(notesData);
-  const setFilter = (filter) => {
+  const setFilter = (filter: string) => {
     console.log(filter);
     setNotesData(
       filter === ""
-        ? state[pageid].data
-        : state[pageid].data.filter((item) => item.tag === filter)
+        ? state[+pageid].data
+        : state[+pageid].data.filter((item) => item.tag === filter)
     );
   };
 
@@ -40,7 +43,7 @@ export const Main = () => {
         {notesData.map((item, id) => (
           <Notes
             key={id}
-            pageid={pageid}
+            pageid={+pageid}
             dataid={id}
             tagValue={item.tag}
             backgroundValue={item.background}

@@ -7,6 +7,11 @@ export const InputContainer = ({
   noteValue = "",
   backgroundValue = "green",
   tagValue = "work",
+}: {
+  id: number;
+  noteValue?: string;
+  backgroundValue?: string;
+  tagValue?: string;
 }) => {
   const [note, setNote] = useState(noteValue);
   const [background, setBackground] = useState(backgroundValue);
